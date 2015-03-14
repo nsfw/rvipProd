@@ -1,0 +1,10 @@
+For VLC - in preferences -
+Interface:
+  "Resize interface to native video size" = OFF
+
+Subtitles and OSD:
+  "Enable OSD" = OFF
+
+-- For playback --
+VLC in upper corner
+SendScreen = 60,186 mag=6

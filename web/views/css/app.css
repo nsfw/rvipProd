@@ -1,0 +1,74 @@
+/*---------------------
+GLOBAL
+----------------------*/
+body {
+  background-color: black;
+  color: white;
+  font-family: helvetica;
+}
+
+#main {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#logo {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*---------------------
+CONTROLS
+----------------------*/
+.button {
+    padding:5px;
+    margin:3px;
+    background:gray;
+    text-align:center;
+    cursor:pointer;
+    background-color: gray;
+    color: black;
+}
+
+.button_box {
+  padding: 5px;
+}
+
+/*---------------------
+KIRK
+----------------------*/
+
+#say {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#sayfield {
+/*  height: 50px;*/
+  width: 80%;
+  background-color: ededed;
+  border: thickpx double 000000;
+  color: 000000;
+  font-size: 20pt;
+  font-family: monospace;
+  font-style: ;
+  font-weight: bold;
+  padding: 6px;
+}
+
+#saybutton {
+  background-color:#ededed;
+  border:2px solid #e9e9e9;
+  display:inline-block;
+  color:#000000;
+  font-family:Arial Black;
+  font-size:30px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+}
+
+

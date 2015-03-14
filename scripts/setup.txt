@@ -1,0 +1,14 @@
+Architecture:
+ Karaoke, OutOfControl,
+
+Can we dedicate a virtual screen for lights? Does it keep updating?
+
+Todo:
+* get backup computers and power supplies
+* Fix panel map!
+
+Write a broadcast gateway for lights / Sendscreen control
+
+start SendScreen
+webGateway (i.e. "Kirk") needs to be running.
+VLC or Quicktime needs to be playing

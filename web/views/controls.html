@@ -1,0 +1,97 @@
+<html>
+  <head>
+	<title>KIRK - Karaoke &amp; Illumination Resource Kit</title>
+    
+    <!-- Start Phones and Pads -->
+    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" />
+	<link rel="apple-touch-icon" href="/media/rvip_song_picker_ios_icon.png"/>
+    <!-- End Phones and Pads -->
+	<link rel="stylesheet" href="css/app.css" />
+	<script src="./jq"></script>
+	<script>
+	 function pressKey(keyName){
+       $.get("/sendKey/"+keyName+"/press");
+	 }
+	 function releaseKey(keyName){
+       $.get("/sendKey/"+keyName+"/release");
+	 }
+	 function get(link){
+       $.get(link);
+	 }
+
+	</script>
+  </head>
+  
+  <body>
+	<div id="main">
+	  <div id="logo">
+        <a href="http://192.168.1.11/main">
+		  <img src="media/KIRK_Logo.gif" border="0" style="width: 80%;"></br></br>
+        </a>
+	  </div>
+    <div> <!--All spans inside here get styled but .buttons-->
+      <div class="button_box">
+        <p class="box_label">LIGHTS</p>
+        <div class="button" onClick="pressKey('black')" >Lights Off</div>
+        <div class="button" onClick="pressKey('white')" >Lights On White</div>
+        <div class="button" onClick="pressKey('stealth-on')" >Amber On</div>
+        <div class="button" onClick="pressKey('stealth-off')" >Cycle</div>
+        <div class="button" onClick="get('/sponsorColors')" >Sponsor Colors</div>
+      </div>
+      <div class="button_box">
+        <p class="box_label">KARAOKE</p>
+        <div class="button" onClick="pressKey('Stop')" >Play - Pause</div>
+        <div class="button" onClick="pressKey('Run')" >Show Upcoming Songs</div>
+        <div class="button" onClick="pressKey('ShowLyrics')" >Show Lyrics (Let's Karaoke!)</div>
+        <div class="button" onClick="pressKey('Right')" >Faster</div>
+        <div class="button" onClick="pressKey('Left')" >Slower</div>
+        <div class="button" onClick="pressKey('Up')" >Higher</div>
+        <div class="button" onClick="pressKey('Down')" >Lower</div>
+        <div class="button" onClick="pressKey('Blank')" >Normal Speed &amp; Pitch</div>
+      </div>
+      <div class="button_box">
+        <p class="box_label">SCREENS</p>
+        <!-- <div class="button" onClick="pressKey('Run')" >Pre-FLight Video</div> --!>
+        <div class="button" onClick="pressKey('NoCare')" >Sponsor Logo Screen</div>
+      </div>
+      <div class="button_box">
+        <p class="box_label">PHOTOBOOTH</p>
+        <div class="button" onClick="pressKey('List')" >Take a picture!</div>
+      </div>
+
+    </div>
+
+	</div>
+    
+    <!-- KEYS!
+    "Right": lambda : kjamsDo("tempo_up"),
+    "Left": lambda : kjamsDo("tempo_down"),
+    "Run": lambda: playPreFlight(), # pause kjams - play preflight and return
+    "Stop": lambda: kjamsDo("play_pause"),
+    "List": lambda: kjamsDo("show_rotation"),
+    "Up": lambda: kjamsDo("pitch_up"),
+    "Down": lambda: kjamsDo("pitch_down"),
+    "Text": lambda: kjamsDo("pitch_normal"),
+    
+    # show the LOGO PAGE (good for sponsors)
+    "NoCare": lambda: showLogo(True),
+    "Blank": lambda: normal(),  # 'default' 
+    
+    # Sound effects
+    "A": lambda: playAudio(applause),
+    "D": diveDiveDive,
+    
+    "0": lambda: lights("resume"),
+    "black": lambda: lights("black"),
+    "white": lambda: lights("white"),
+    
+    # stealth / legal mode
+    "stealth-on": lambda: stealthMode(True),
+    "stealth-off": lambda: stealthMode(False),
+    
+    "3": lambda: say("Hello, my name is Steven Hawking. And I endorse the R V I P!"),
+    "2": lambda: say("You're so Fucking Special!")
+    -->
+  </body>
+</html>

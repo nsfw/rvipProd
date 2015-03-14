@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>KIRK - Karaoke &amp; Illumination Resource Kit</title>
+
+<!-- Start Phones and Pads -->
+<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" />
+		<link rel="apple-touch-icon" href="/media/rvip_song_picker_ios_icon.png"/>
+<!-- End Phones and Pads -->
+		<link rel="stylesheet" href="css/app.css" />
+		<script src="./jq"></script>
+		<script>
+			function sayKeyPressed(){
+	 			 var say = $("#sayfield").val()
+	  			 if(say){
+	 		     $.get("/say/"+encodeURIComponent(say))
+			   	}
+			}
+
+			function say(thing){
+	 		     $.get("/say/"+encodeURIComponent(thing));
+			}
+
+		</script>
+	</head>
+	
+	<body>
+		<div id="main">
+			<div id="logo">
+              <a href="http://192.168.1.11/">
+				<img src="media/KIRK_Logo.gif" border="0" style="width: 80%;"></br></br>
+              </a>
+			</div>
+			<div id="say">
+			  <textarea rows="4" id="sayfield" name="say" title="say" autofocus size="80" placeholder="Type something in here and KIRK will say it." maxlength="140"></textarea></br></br>
+			  <input type="submit" id="saybutton" name="dosay" value="SAY" onclick="sayKeyPressed()" />
+			</div>
+		</div>
+        <br/>
+        <div>
+          <span onClick="say('Now your saying something!')">Something</span>
+        </div>
+
+	</body>
+
+
+</html>

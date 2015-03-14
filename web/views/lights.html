@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>LIGHTS</title>
+
+    <!-- Start Phones and Pads -->
+    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" />
+    <link rel="apple-touch-icon" href="/media/rvip_song_picker_ios_icon.png"/>
+    <!-- End Phones and Pads -->
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="./jq"></script>
+    <script>
+     function doPreset(p){
+       $.get("/sendscreen/preset/"+p)
+     }
+
+     // generic sendscreen OSC sender
+     function send(path,data){
+       console.log(path);
+       console.log(data);
+       $.get("/sendscreen/send"+path+"/"+data)
+     }
+
+     // VIDEO player commands
+
+    </script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="logo">
+        <a href="http://192.168.1.11/">
+          <img src="media/lights.jpg" border="0" style="width: 80%;"></br></br>
+        </a>
+      </div>
+      <div id="say">
+        <input type="submit" id="saybutton"  value="VIDEO" onclick="doPreset(0)" />
+        <input type="submit" id="saybutton"  value="GAME" onclick="doPreset(1)" />
+        <input type="submit" id="saybutton"  value="TEST" onclick='send("/pos",[200,200])' />
+
+      </div>
+    </div>
+    <br/>
+  </body>
+</html>

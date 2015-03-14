@@ -1,0 +1,48 @@
+{ // Check this in to git, try not to personalize it too much
+
+    "send_osc_by_default": 0,
+    // "osc_multicast" : 1,
+    // "osc_out_host" : "239.192.192.192",
+    // "osc_out_port" : 9192,
+
+    "osc_multicast" : 0,
+    "osc_out_host" : "127.0.0.1",
+    "osc_out_port" : 9999,
+
+    "osc_in_port" : 9998,
+
+    // sACN
+    "acn_multicast":  0,
+    "acn_interface": "en0",
+
+    // unicast
+
+    // RVIP
+    "acn_out_host" : "192.168.1.22",
+    // local testing
+    // "acn_out_host" : "127.0.0.1",
+
+    // output resolution
+    // map_file_reshapes_window means we modify outW and outH
+    // to match the reality from the map file
+    "map_file_reshapes_window" : 0,
+
+    // stretch means we normalize image map
+    // so leftmost pixel in image has x==0, rightmost has x==1.0 etc
+    "stretchImagePixels":0,
+
+    "outW" : 80,
+    "outH" : 10,
+
+    // initial window position
+    "posX" : 0,
+    "posY" : 0,
+
+    // initial window size magnification
+    "displayMag": 8,
+
+    "fps": 30,
+
+    // sACN map file
+    "map": "full.json"
+}

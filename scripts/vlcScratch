@@ -1,0 +1,61 @@
+http://stackoverflow.com/questions/22940975/opening-multiple-windows-with-applescript
+
+# Specify the desired window bounds.
+# !! In the "System Events" context, windows do not
+# !! have `bounds` properties, but separate `position` and
+# !! `size` properties.
+set WIN_POSITIONS to {{13, 36}, {13, 544}, {13, 1043}}
+set WIN_SIZES to {{790, 519}, {790, 519}, {790, 519}}
+
+# Launch the VLC instances.
+repeat with i from 1 to count of WIN_POSITIONS
+    do shell script "open -na VLC.app"
+end repeat
+
+# Note:
+# Instance-specific manipulation must
+# be performed in the "System Events" context, because
+# we must distinguish the VLC instances by their
+# PIDs (process IDs; called `unix id` in AppleScript).
+tell application "System Events"
+
+    # Get the PIDs (process IDs) of all VLC instances.
+    set vlcPids to get the unix id of every process whose name is "VLC"
+
+    # Loop over all instance PIDs.
+    # !! It is imperative to *continue* to use object specifiers
+    # !! with *filters based on the PID* so as to ensure that the
+    # !! individual instances are targeted.
+    # !! Attempting to store references to these instances in
+    # !! variables fails subtly, as evidenced by the "Events"
+    # !! tab in AppleScript editor later showing the non-specific
+    # !! process "VLC" of application "System Events" specifiers.
+    set winNdx to 1
+    repeat with vlcPid in vlcPids
+
+        # WAIT for each instance to create its main window, wich
+        # sadly, is not available right away.
+        # Once created, position it.
+        set haveWin to false
+        tell (first process whose unix id is vlcPid)
+            repeat with i from 1 to 25 # times out after 25 * .2 == 5 secs.
+                if (count of windows of it) > 0 then
+                    set haveWin to true
+                    tell front window of it
+                        # !! In the "System Events" context, windows do not
+                        # !! have `bounds` properties, but separate `position` and
+                        # !! `size` properties.
+                        set position to item winNdx of WIN_POSITIONS
+                        set size to item winNdx of WIN_SIZES
+                    end tell
+                    exit repeat
+                end if
+                delay 0.2 # no window yet; sleep some and try again
+            end repeat
+        end tell
+        if not haveWin then error "VLC instance " & vlcPid & " unexpectedly did not create a window within the timeout period."
+
+        set winNdx to winNdx + 1
+    end repeat
+
+end tell
