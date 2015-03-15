@@ -27,3 +27,4 @@ Under LEDS:
 
     color sequence:           GRB
     Maximum output intensity: 80%
+    GAMMA:                    1.0 (default is 2.0)
