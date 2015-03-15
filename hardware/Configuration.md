@@ -18,7 +18,12 @@ Using the WINDOWS PROGRAM :( "Advatek Assistant", on the "Control" tab, Advanced
      Output  3: 6     1     100
      Output  4: 7     1     100
 
-     Output  9: 1     1     100
-     Output 10: 2     1     100
-     Output 11: 3     1     100
-     Output 12: 4     1     100
+     Output 13: 1     1     100
+     Output 14: 2     1     100
+     Output 15: 3     1     100
+     Output 16: 4     1     100
+
+Under LEDS:
+
+    color sequence:           GRB
+    Maximum output intensity: 80%
