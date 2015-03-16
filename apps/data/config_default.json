@@ -16,11 +16,9 @@
     "acn_interface": "en0",
 
     // unicast
-
-    // RVIP
     "acn_out_host" : "192.168.1.22",
-    // local testing
     // "acn_out_host" : "127.0.0.1",
+    // "acn_out_host" : "10.101.60.254",
 
     // output resolution
     // map_file_reshapes_window means we modify outW and outH
