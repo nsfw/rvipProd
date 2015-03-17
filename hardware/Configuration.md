@@ -10,21 +10,25 @@ The PixLite is configured as such:
 The TOP Panels plug in to the TOP of the board, starting at the left - 9-12
 The BOTTOM Panels plug in to the BOTTOM of the board, "   "    "     - 1-4
 
-Using the WINDOWS PROGRAM :( "Advatek Assistant", on the "Control" tab, Advanced button, configure:
+Use the WINDOWS PROGRAM "Advatek Assistant" to setup the board.
 
-              Univ  Chan  Num Pixels
-     Output  1: 4     1     100
-     Output  2: 5     1     100
-     Output  3: 6     1     100
-     Output  4: 7     1     100
+On the Control Tab:
+Ethernet Protocol: sACN (E1.31)
 
-     Output 13: 1     1     100
-     Output 14: 2     1     100
-     Output 15: 3     1     100
-     Output 16: 4     1     100
+On the Control Tab, set "Advanced", and then by clicking on the Advanced button, configure:
+
+              Univ  Chan  Num Pixels  Intensity Limit%
+     Output  1: 4     1     100       80
+     Output  2: 5     1     100       80
+     Output  3: 6     1     100       80
+     Output  4: 7     1     100       80
+
+     Output 13: 4     1     100       80
+     Output 14: 3     1     100       80
+     Output 15: 2     1     100       80
+     Output 16: 1     1     100       80
 
 Under LEDS:
 
     color sequence:           GRB
-    Maximum output intensity: 80%
-    GAMMA:                    1.0 (default is 2.0)
+    Set Gamma:                1.0 (default is 2.0)
