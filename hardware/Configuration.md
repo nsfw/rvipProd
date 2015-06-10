@@ -1,6 +1,5 @@
 The PixLite is configured as such:
 
-
     +------------------------------------------------+
     | Outputs 9-16                     Power for 9-16|
     | Ethernet Port                                  |
@@ -13,7 +12,10 @@ The BOTTOM Panels plug in to the BOTTOM of the board, "   "    "     - 1-4
 Use the WINDOWS PROGRAM "Advatek Assistant" to setup the board.
 
 On the Control Tab:
-Ethernet Protocol: sACN (E1.31)
+
+    IP Address: 192.168.1.22
+    Type of IP: Static
+    Ethernet Protocol: sACN (E1.31)
 
 On the Control Tab, set "Advanced", and then by clicking on the Advanced button, configure:
 
@@ -30,5 +32,7 @@ On the Control Tab, set "Advanced", and then by clicking on the Advanced button,
 
 Under LEDS:
 
+    Pixel ID: WS2811/12
+    Speed: FAST
     color sequence:           GRB
     Set Gamma:                1.0 (default is 2.0)
