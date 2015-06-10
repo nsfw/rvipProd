@@ -20,10 +20,10 @@ On the Control Tab:
 On the Control Tab, set "Advanced", and then by clicking on the Advanced button, configure:
 
               Univ  Chan  Num Pixels  Intensity Limit%
-     Output  1: 4     1     100       80
-     Output  2: 5     1     100       80
-     Output  3: 6     1     100       80
-     Output  4: 7     1     100       80
+     Output  1: 5     1     100       80
+     Output  2: 6     1     100       80
+     Output  3: 7     1     100       80
+     Output  4: 8     1     100       80
 
      Output 13: 4     1     100       80
      Output 14: 3     1     100       80
