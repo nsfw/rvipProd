@@ -37,10 +37,13 @@
     "posY" : 0,
 
     // initial window size magnification
-    "displayMag": 8,
+    "displayMag": 6,
 
     "fps": 30,
 
     // sACN map file
-    "map": "full.json"
+    "map": "full.json",
+
+    // recording directory
+    "recordings":"recordings"
 }
