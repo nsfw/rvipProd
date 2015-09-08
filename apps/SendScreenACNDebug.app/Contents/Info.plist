@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>SendScreenACNDebug</string>
 	<key>CFBundleIconFile</key>
-	<string>icon-debug.icns</string>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>cc.openFrameworks.ofapp</string>
 	<key>CFBundleInfoDictionaryVersion</key>
